@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07111f" />
+    <title>KSC — Admin</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="topbar">
+        <a class="btn btn-ghost btn-sm" href="index.html" data-i18n="backHome">Về trang chủ</a>
+        <div style="display: flex; gap: 0.5rem; align-items: center">
+          <span id="modeBadge" class="badge demo" data-i18n="demoBadge">Demo</span>
+          <div class="lang-switch">
+            <button type="button" data-lang="vi" class="active">VI</button>
+            <button type="button" data-lang="ja">JP</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-head">
+        <div class="brand-lockup">
+          <div class="logo-mark">KSC</div>
+          <div class="brand-text">
+            <strong data-i18n="adminTitle">Trang quản lý</strong>
+            <span>株式会社関西SCシステム</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn btn-ghost btn-sm hidden" type="button" data-i18n="logout">Đăng xuất</button>
+      </div>
+
+      <div id="msg" class="alert err hidden"></div>
+
+      <section id="loginSection" class="card">
+        <h2 data-i18n="login">Đăng nhập</h2>
+        <form id="loginForm" class="form-grid" style="margin-top: 0.75rem">
+          <label class="field">
+            <span data-i18n="username">Tài khoản</span>
+            <input name="username" required autocomplete="username" />
+          </label>
+          <label class="field">
+            <span data-i18n="password">Mật khẩu</span>
+            <input name="password" type="password" required autocomplete="current-password" />
+          </label>
+          <button class="btn btn-blue" type="submit" data-i18n="login">Đăng nhập</button>
+        </form>
+        <p class="muted" style="margin-top: 0.75rem; font-size: 0.8rem">Demo: admin / ksc-demo</p>
+      </section>
+
+      <section id="adminSection" class="hidden">
+        <div class="tabs">
+          <button type="button" class="active" data-tab="regs" data-i18n="tabRegs">Đăng ký</button>
+          <button type="button" data-tab="schedule" data-i18n="tabSchedule">Xếp lịch</button>
+          <button type="button" data-tab="confirm" data-i18n="tabConfirm">Xác nhận</button>
+        </div>
+
+        <div id="tab-regs" class="tab-panel">
+          <div id="regList" class="table-cards"></div>
+        </div>
+
+        <div id="tab-schedule" class="tab-panel hidden">
+          <div class="filters">
+            <label class="field">
+              <span data-i18n="filterDate">Ngày</span>
+              <input type="date" id="fDate" />
+            </label>
+            <label class="field">
+              <span data-i18n="filterShift">Ca</span>
+              <select id="fShift"><option value="">—</option></select>
+            </label>
+            <label class="field">
+              <span data-i18n="filterPlace">Địa điểm</span>
+              <select id="fPlace"><option value="">—</option></select>
+            </label>
+          </div>
+          <div id="schedList" class="table-cards"></div>
+        </div>
+
+        <div id="tab-confirm" class="tab-panel hidden">
+          <div id="confirmList" class="table-cards"></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/demo-data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>
