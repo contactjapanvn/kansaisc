@@ -2,15 +2,69 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kansai SC</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07111f" />
+    <title>KSC — 株式会社関西SCシステム</title>
+    <link rel="stylesheet" href="css/app.css" />
   </head>
   <body>
-    <main class="hero">
-      <p class="brand">Kansai SC</p>
-      <h1>Website đang được xây dựng</h1>
-      <p class="lead">Mở project này trong Cursor và bắt đầu code.</p>
-    </main>
+    <div class="app-shell">
+      <div class="topbar">
+        <span id="modeBadge" class="badge demo" data-i18n="demoBadge">Chế độ Demo</span>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="vi" class="active">VI</button>
+          <button type="button" data-lang="ja">JP</button>
+        </div>
+      </div>
+
+      <header class="hero-home">
+        <div class="logo-mark" aria-hidden="true">KSC</div>
+        <p class="muted" style="font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.35rem">
+          株式会社関西SCシステム
+        </p>
+        <h1 data-i18n="homeTitle">Quản lý lịch làm việc</h1>
+        <p data-i18n="homeSubtitle">Đăng ký ca · Xác nhận đi làm · Xem lịch ngày mai</p>
+      </header>
+
+      <section class="action-stack">
+        <a class="btn btn-lg btn-blue" href="register.html">
+          <span data-i18n="btnRegister">ĐĂNG KÝ LỊCH LÀM</span>
+          <span class="sub" data-i18n="btnRegisterJa">勤務希望登録</span>
+        </a>
+
+        <a class="btn btn-lg btn-green" href="confirm.html">
+          <span data-i18n="btnConfirm">XÁC NHẬN ĐI LÀM</span>
+          <span class="sub" data-i18n="btnConfirmJa">出勤確認</span>
+        </a>
+
+        <div class="collapse-panel" id="tomorrowPanel">
+          <button type="button" class="collapse-head" id="tomorrowToggle">
+            <span>
+              <strong data-i18n="btnTomorrow">XEM LỊCH LÀM NGÀY MAI</strong>
+              <br />
+              <small class="muted" data-i18n="btnTomorrowJa">翌日の勤務予定</small>
+            </span>
+            <span class="chev">▼</span>
+          </button>
+          <div class="collapse-body" id="tomorrowPreview">
+            <p class="muted" style="margin-bottom: 0.65rem">
+              <a class="btn btn-ghost btn-sm" href="schedule.html" style="width: 100%">→ Schedule</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer-mini">
+        <a href="admin.html" data-i18n="adminLink">Quản lý</a>
+        · KSC Work Schedule
+      </p>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/demo-data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
