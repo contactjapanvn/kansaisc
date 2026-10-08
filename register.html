@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07111f" />
+    <title>KSC — Đăng ký lịch làm</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="topbar">
+        <a class="btn btn-ghost btn-sm" href="index.html" data-i18n="backHome">Về trang chủ</a>
+        <div style="display: flex; gap: 0.5rem; align-items: center">
+          <span id="modeBadge" class="badge demo" data-i18n="demoBadge">Demo</span>
+          <div class="lang-switch">
+            <button type="button" data-lang="vi" class="active">VI</button>
+            <button type="button" data-lang="ja">JP</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-head">
+        <div>
+          <div class="brand-lockup" style="margin-bottom: 0.55rem">
+            <div class="logo-mark">KSC</div>
+            <div class="brand-text">
+              <strong>KSC</strong>
+              <span>株式会社関西SCシステム</span>
+            </div>
+          </div>
+          <h1 data-i18n="registerTitle">Đăng ký lịch làm</h1>
+        </div>
+      </div>
+
+      <div id="msg" class="alert ok hidden"></div>
+
+      <form id="regForm" class="card form-grid" autocomplete="on">
+        <div class="form-grid two">
+          <label class="field">
+            <span data-i18n="nameLatin">Họ tên (chữ Latin)</span>
+            <input name="nameLatin" required placeholder="Nguyen Van A" />
+          </label>
+          <label class="field">
+            <span data-i18n="nameKana">Họ tên Katakana</span>
+            <input name="nameKana" required placeholder="グエン　バン　エー" />
+          </label>
+        </div>
+
+        <div class="form-grid two">
+          <label class="field">
+            <span data-i18n="birthday">Ngày tháng năm sinh</span>
+            <input name="birthday" type="date" required />
+          </label>
+          <label class="field">
+            <span data-i18n="empCode">Mã nhân viên</span>
+            <input name="empCode" required placeholder="KSC00X" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span data-i18n="personalPin">Mã cá nhân (PIN)</span>
+          <span class="hint" data-i18n="personalPinHint">Dùng để xác nhận đi làm</span>
+          <input name="pin" type="password" inputmode="numeric" minlength="4" maxlength="8" required placeholder="****" />
+        </label>
+
+        <div class="form-grid two">
+          <label class="field">
+            <span data-i18n="visaType">Loại tư cách lưu trú</span>
+            <select name="visaType" id="visaType" required></select>
+          </label>
+          <label class="field">
+            <span data-i18n="visaExpiry">Hạn lưu trú</span>
+            <input name="visaExpiry" type="date" required />
+          </label>
+        </div>
+
+        <div class="form-grid two">
+          <label class="field">
+            <span data-i18n="busStop">Điểm đón xe bus</span>
+            <select name="busStop" id="busStop" required></select>
+          </label>
+          <label class="field">
+            <span data-i18n="workplace">Địa điểm làm việc</span>
+            <select name="workplace" id="workplace" required></select>
+          </label>
+        </div>
+
+        <div>
+          <h3 data-i18n="workDays">Chọn ngày làm trong tuần tới</h3>
+          <div id="dayList" class="day-shift-list" style="margin-top: 0.65rem"></div>
+        </div>
+
+        <button class="btn btn-lg btn-blue" type="submit">
+          <span data-i18n="submitRegister">Gửi đăng ký</span>
+        </button>
+      </form>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/demo-data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>
